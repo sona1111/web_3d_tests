@@ -1,0 +1,90 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+<meta charset="utf-8" />  
+<title>Calculator</title> 
+
+<style>
+span {margin:8px;border:blue outset 4px; display:inline-block;font-size:25px;}
+aside {margin:8px;border:blue outset 4px; display:inline-block;font-size:25px;}
+section {margin:8px;border:blue outset 4px; display:inline-block;font-size:25px;}
+div {margin:8px;border:blue outset 4px; display:inline-block;font-size:25px;}
+
+p { width:300px;
+    border: red outset 5px;
+    height:25px;
+    margin:5px;
+    margin-left:15px;
+    font-size:20px;
+}
+</style>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+a = ''
+b = ''
+first = true;
+
+
+$('span').click(function(){
+$('p').text($('p').text()+$(this).text());
+if(first == true){
+a = String(a) + String($(this).text());
+}
+else{
+b = String(b) + String($(this).text()); 
+};
+});
+
+$('div').click(function(){
+$('p').text('');
+o = $(this).text();
+first=false;
+console.log(o);
+});
+
+$('aside').click(function(){
+r = compute(Number(a),Number(b),o);
+$('p').text(r);
+first = true;
+});
+
+function compute(x,y,op){
+    console.log(x);
+    console.log(y);
+    
+    switch(op){
+    case '+':return x+y;
+    case '-':return x-y;
+    case '*':return x*y;
+    case '/':return x/y;
+}};
+
+
+
+
+});
+
+</script> 
+</head> 
+
+
+ 
+<body>
+
+<p>
+</p>
+
+<span>1</span><span>2</span><span>3</span><span>4</span><br>
+<span>5</span><span>6</span><span>7</span><span>8</span><br>
+<span>9</span><span>0</span><br>
+<div>+</div><div>-</div><br>
+<div>*</div><div>/</div><br>
+<aside>Enter</aside><section>C/CE</section>
+
+
+</body>
+</html>

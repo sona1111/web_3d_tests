@@ -1,0 +1,115 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+<meta charset="utf-8" />  
+<title>Blank HTML 5 Template</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+$( document ).ready(function() {
+  
+  
+  $(".l1").mouseover(  
+    function(){
+     $("#cube").addClass("dtest1_1");
+     $(".two").addClass("l1");
+     }
+  )
+  
+  $("#cube").mouseleave(
+        function(){
+     $("#cube").removeClass("dtest1_1");
+     $(".two").removeClass("l1");
+     $("#cube").removeClass("dtest1_2");
+     $(".three").removeClass("l2");
+     $("#cube").removeClass("dtest1_3");
+     $("#container").css("height","30px");
+     $(".four").removeClass("l3");
+     $("#cube").removeClass("dtest1_4");
+     $(".five").addClass("l4");
+     }
+     )
+  
+    $(".l2").mouseover(  
+    function(){
+     $("#cube").addClass("dtest1_2");
+     $(".three").addClass("l2");
+     }
+
+  )
+  
+      $(".l3").mouseover(  
+    function(){
+     $("#cube").addClass("dtest1_3");
+     $("#container").css("height","120px");
+     $(".four").addClass("l3");
+     }
+  )
+  
+      $(".l4").mouseover(  
+    function(){
+     $("#cube").addClass("dtest1_4");
+     $(".five").addClass("l4");
+     }
+
+  )
+  
+
+});
+
+</script>
+
+<link href="3d.css" rel="stylesheet">
+<style>
+
+
+
+
+/*
+.cube:hover > .two {-webkit-transform: translateX(-400px) rotateY(-90deg);}
+.cube:hover > .three {-webkit-transform: translateZ(400px);}
+.cube:hover > .four {-webkit-transform: rotateY(90deg) translateZ(400px);}
+.cube:hover > .five {-webkit-transform: rotateY(-180deg) translateZ(400px);}
+*/
+
+
+
+</style>  
+</head>  
+<body>
+<div id=container>
+<div id="cube" class="cube">
+   
+    <div class="face two">
+    <ul>
+        <li><a href="">Photo Gallery </a><a class="l1" href=""><img src="nextarrow.png"></a></li>
+        <li><a href="">Locations </a><a class="l2" href=""><img src="nextarrow.png"></a></li>
+        <li><a href="">Contact Info </a><a class="l3" href=""><img src="nextarrow.png"></a></li>
+        <li><a href="">About Us </a><a class="l4" href=""><img src="nextarrow.png"></a></li>
+    </ul>
+    </div>
+    <div class="face three">
+        <a href="">Data Centers...</a>
+        <a href="">Offices</a>
+        <a href="">Laboratories</a>
+        <a href="">Recreation Areas</a>
+    </div>
+    <div class="face four">
+        <a href="">Route 27...</a>
+        <a href="">Millstone River Road...</a>
+        <a href="">South Middlebush Road...</a>
+    </div>
+    <div class="face five">
+        <p>(777)-929-5432<br>
+           something12345@gmail.com</p>
+        <p>Feel Free to contact us any time, 24/7!<br>
+           We require no sleep!</p>
+    </div>
+   
+</div>
+</div>
+
+
+
+</body>
+</html>

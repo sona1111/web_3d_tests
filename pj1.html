@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lorem: The distraction remover of the future</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+$( document ).ready(function() {
+  
+  $(function() {
+  
+  $(".two li a:first-child")
+  
+        .mouseover(function() { 
+            
+            var elem = this
+            
+            var srcthing = "nextarrowalt.png"
+            window.jloop = setInterval(
+                     function(){
+                     
+                            if (srcthing == "nextarrow.png")
+                                  {
+                                  $(elem).next().find('img').attr("src", srcthing);
+                                  srcthing = "nextarrowalt.png"
+                                  }
+                                else
+                                  {
+                                  $(elem).next().find('img').attr("src", srcthing);
+                                  srcthing = "nextarrow.png"
+                                  }
+                     },
+                     150
+                );
+            
+        })
+        .mouseout(function() {
+            
+            clearInterval(window.jloop);
+            $(this).next().find('img').attr("src", "nextarrow.png");
+        });
+      }); 
+
+  
+  $("#cube").mouseleave(
+        function(){
+     $("#cube").removeClass("dtest1_1");
+     $(".two").removeClass("l1");
+     $("#cube").removeClass("dtest1_2");
+     $(".three").removeClass("l2");
+     $("#cube").removeClass("dtest1_3");
+     $("#container").css("height","35px");
+     $(".four").removeClass("l3");
+     $("#cube").removeClass("dtest1_4");
+     $(".five").addClass("l4");
+     }
+     );
+     
+  $(".l1").mouseover(  
+    function(){
+     $("#cube").addClass("dtest1_1");
+     $(".two").addClass("l1");
+     }
+  );     
+  
+    $(".l2").mouseover(  
+    function(){
+     $("#cube").addClass("dtest1_2");
+     $(".three").addClass("l2");
+     }
+
+  );
+  
+      $(".l3").mouseover(  
+    function(){
+     $("#cube").addClass("dtest1_3");
+     $("#container").css("height","120px");
+     $(".four").addClass("l3");
+     }
+  );
+  
+      $(".l4").mouseover(  
+    function(){
+     $("#cube").addClass("dtest1_4");
+     $(".five").addClass("l4");
+     }
+
+  );
+  var i = 0
+  setInterval(
+     function(){
+          
+               i = i+120
+               $("#pyramid").stop(true,true).css("-webkit-transform", "rotateY(" +  i + "deg)");
+               $("#pyramid").stop(true,true).css("-moz-transform", "rotateY(" +  i + "deg)");
+               $("#pyramid").stop(true,true).css("transform", "rotateY(" +  i + "deg)");
+            
+     },
+     5000
+);
+
+});
+
+</script>
+
+<link rel="shortcut icon" href="
+data:image/vnd.microsoft.icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAEAgQAnJqcAGRmZADMzswANDI0APz+/AAQABMAAAAAAIIAOAAAALcAABMWAAAAAAAABgYAAAACAAAAMQAAAAAAVVVVVVVVVVVVVVVVVVVVVVEhESIVVSVVUQUwJVRVQVVRBTA1URVCVVMFMDVTRURVUwUwNVMFQBVTA1AVUwUUJVMDUiVRRRQRUwNVRVRBJFBVA1VRIlURU1UBVVVVVVVVVUFVVVVVVVVVQVVVVVVVVVUiVVVVVVVVVRRVVVVVVVUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
+
+<link href='http://fonts.googleapis.com/css?family=Amarante' rel='stylesheet' type='text/css'>
+	<style>
+	
+	.title{margin-left:30%;}
+	
+	.title h1{font-family: 'Amarante', cursive;
+	font-size:10em;
+	margin:0;
+	color:blue;
+	
+	}
+	
+	#pagewrap{width:95%;margin:0 auto;}
+	
+	.title h2{font-family: 'Amarante', cursive;
+	font-size:4.5em;
+	color:#3399FF;
+	margin:0;
+	margin-top:-90px;
+	margin-left:270px;
+	
+	}
+	
+	
+		body {font-family: sans-serif;
+		      /*margin: 0 100px;*/
+		      margin-top:110px;
+			  background:black url(random-art.gif) repeat-x;
+		
+	}
+	
+	div.outer{background:#FCFCFC;
+	          box-shadow:0 0 40px 40px #888888;
+	          width:90%;
+	          margin: 0 auto;
+	          margin-top:85px;
+	          padding:15px;
+	}
+	
+	
+
+	
+	    #wrapper {margin: 0 100px;margin-top:35px;clear:both;}
+	
+
+		                
+		}
+		
+		#main {border:#33FDC0 solid 4px;padding:10px;}
+	
+		#main img {float:right;}
+		
+		#main p:nth-child(even):first-letter {font-size:3em;color:magenta}
+		
+		footer {font-size:1em;text-align:center;
+			  background:#FCFCFC;
+	          box-shadow:0 0 40px 40px #888888;
+	          width:90%;
+	          margin: 0 auto;
+	          margin-top:100px;
+	          padding:15px;
+	}
+		
+
+/*NEW PART-------------------------------------------------------------------------------------------------*/
+
+
+
+.dtest1_1 {-webkit-transform:rotateY(-90deg);
+-moz-transform:rotateY(-90deg);
+transform:rotateY(-90deg);}
+.dtest1_2 {-webkit-transform:rotateY(-180deg);
+-moz-transform:rotateY(-180deg);
+transform:rotateY(-180deg);}
+.dtest1_3 {-webkit-transform:rotateY(-270deg);
+-moz-transform:rotateY(-270deg);
+transform:rotateY(-270deg);}
+.dtest1_4 {-webkit-transform:rotateY(-360deg);
+-moz-transform:rotateY(-360deg);
+transform:rotateY(-360deg);}
+
+#container{-webkit-perspective: 1500px;
+-moz-perspective: 1500px;
+perspective: 1500px;
+width: 800px;
+height: 35px;
+margin: 0 auto;
+margin-top:20px;
+transition: height 1s;
+
+}
+
+#container2{-webkit-perspective: 1500px;
+-moz-perspective: 1500px;
+perspective: 1500px;
+width: 172px;
+height: 172px;
+margin: 0 auto;
+position: relative;
+float:right;
+margin-left:25px;
+}
+
+#pyramid {
+  height:inherit;
+  position:absolute;
+  width:inherit;
+  transition: -webkit-transform 2.2s;
+  transition: -moz-transform 2.2s;
+  transition: transform 2.2s;
+-webkit-transform-style: preserve-3d; 
+-moz-transform-style: preserve-3d; 
+transform-style: preserve-3d; 
+}
+
+
+.cube a {margin-left:20px;
+         font-size:1.4em;
+
+}
+
+.cube img {vertical-align:middle;
+           margin-top:-6px;
+           margin-left:-20px;
+    }
+
+.cube {
+  height:inherit;
+  position: relative;  
+  width:inherit;
+  transition: -webkit-transform 1s;
+  transition: -moz-transform 1s;
+  transition: transform 1s;
+-webkit-transform-style: preserve-3d; 
+-moz-transform-style: preserve-3d; 
+transform-style: preserve-3d; 
+
+}
+
+.face {
+  background-color: rgba(50, 50, 50,0.6);
+  
+  height: inherit;
+  box-shadow:0 0 10px 10px #888888;
+  position: absolute;
+  width: inherit;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+}
+
+
+
+.cube .two {
+  background-color: rgba(255, 255, 210,0.8);
+  -webkit-transform: translateZ(400px);
+  -moz-transform: translateZ(400px);
+  transform: translateZ(400px);
+}
+
+.cube .three {
+  background-color: rgba(255, 210, 255,0.8);
+  -webkit-transform: rotateY(90deg) translateZ(400px);
+  -moz-transform: rotateY(90deg) translateZ(400px);
+  transform: rotateY(90deg) translateZ(400px);
+}
+
+.cube .four {
+  background-color: rgba(210, 255, 255,0.8);
+  -webkit-transform: rotateY(180deg) translateZ(400px);
+  -moz-transform: rotateY(180deg) translateZ(400px);
+  transform: rotateY(180deg) translateZ(400px);
+}
+
+.cube .five {
+  background-color: rgba(230, 230, 230,0.8);
+  -webkit-transform: rotateY(-90deg) translateZ(400px);
+  -moz-transform: rotateY(-90deg) translateZ(400px);
+  transform: rotateY(-90deg) translateZ(400px);
+}
+
+.pyface {
+  background-color: rgba(50, 50, 50,0.6);
+  
+  height: inherit;
+  border:red solid 2px;
+  position: absolute;
+  width: inherit;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+
+}
+#pyramid .py1 {
+ 
+  -webkit-transform: translateZ(49.6px);
+  -moz-transform: translateZ(49.6px);
+  transform: translateZ(49.6px);
+}
+
+#pyramid .py2 {
+  
+  -webkit-transform: rotateY(120deg) translateZ(49.6px);
+  -moz-transform: rotateY(120deg) translateZ(49.6px);
+  transform: rotateY(120deg) translateZ(49.6px);
+}
+
+#pyramid .py3 {
+ 
+  -webkit-transform: rotateY(240deg) translateZ(49.6px);
+  -moz-transform: rotateY(240deg) translateZ(49.6px);
+  transform: rotateY(240deg) translateZ(49.6px);
+}
+
+.face ul {
+  margin: 0;
+  padding: 0;
+  margin-top:5px;
+  list-style: none;
+}
+.face li {
+  float: left;
+
+  
+  
+}
+
+.face a:hover {
+    background-color:rgba(255,255,255,0.3)
+}
+	
+	</style>
+  </head>
+  <body>
+  <div id=pagewrap>
+  <header class=title>
+  <h1>Lorem</h1>
+  <h2>Ipsum</h2>
+  </header>
+  
+  <header id=container class=cont>
+	
+	 
+<div id="cube" class="cube">
+   
+    <div class="face two">
+    <ul>
+        <li><a href="">Photo Gallery </a><a class="l1" href=""><img src="nextarrow.png"></a></li>
+        <li><a href="">Locations </a><a class="l2" href=""><img src="nextarrow.png"></a></li>
+        <li><a href="">Contact Info </a><a class="l3" href=""><img src="nextarrow.png"></a></li>
+        <li><a href="">About Us </a><a class="l4" href=""><img src="nextarrow.png"></a></li>
+    </ul>
+    </div>
+    <div class="face three">
+    <ul>
+        <li><a href="">Data Centers...</a></li>
+        <li><a href="">Offices</a></li>
+        <li><a href="">Laboratories</a></li>
+        <li><a href="">Recreation Areas</a></li>
+    </ul>
+    </div>
+    <div class="face four">
+    <ul>
+        <li><a href="">Route 27...</a></li>
+        <li><a href="">Millstone River Road...</a></li>
+        <li><a href="">South Middlebush Road...</a></li>
+    </ul>
+    </div>
+    <div class="face five">
+    <ul>
+        <li><p>(777)-929-5432<br>
+           something12345@gmail.com</p>
+        <p>Feel Free to contact us any time, 24/7!<br>
+           We require no sleep!</p></li>
+    </ul>
+    </div>
+   
+</div>
+
+
+	</header>
+  
+  <div class=outer>
+    
+    
+    
+    
+	<div id=wrapper>
+	<section id="main">
+	
+	<div id=container2>
+	<div id=pyramid>
+	<div class="pyface py1"><img src=lipsum07.jpg></div>
+	<div class="pyface py2"><img src=lipsum07.jpg></div>
+	<div class="pyface py3"><img src=lipsum07.jpg></div>
+	
+	</div>
+	</div>
+	
+	
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris urna sem, tristique quis urna a, posuere posuere ipsum. Duis bibendum lacus et nulla egestas suscipit. Morbi interdum ultrices tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies congue metus et tempor. Fusce velit eros, molestie non auctor tempor, aliquet et sapien. Phasellus mattis adipiscing aliquet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus fermentum risus sit amet ante molestie vehicula. Nullam arcu est, tempor quis blandit vel, sollicitudin non sem. Ut ipsum lectus, lacinia at est non, tempor vehicula lectus. Curabitur et condimentum ligula, eget consequat odio. Sed sollicitudin diam et risus hendrerit vestibulum. Donec eget risus tristique, convallis massa eu, pulvinar neque. Aenean imperdiet lobortis nibh, eu sagittis nibh feugiat et. Maecenas sed purus aliquet, accumsan erat at, molestie enim. Cras diam enim, laoreet posuere tortor a, vulputate aliquet mauris. Proin malesuada adipiscing pulvinar.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida mauris tristique elit vestibulum, ac mattis odio tincidunt. Integer arcu lacus, sollicitudin elementum nibh at, aliquam dictum mi. Phasellus varius lacus eget quam venenatis ultricies. Aenean vitae gravida mi, vitae venenatis arcu. Nullam pellentesque dictum tempor. Nulla lobortis odio et magna ultricies, vel iaculis lectus viverra. Pellentesque mauris enim, dignissim at imperdiet non, varius nec augue. Cras posuere est erat, et semper nisl posuere in. Pellentesque dictum pretium felis nec congue.</p>
+	</section>
+	
+
+	</div>
+	</div>
+	
+		<footer>
+	<address>Paul Jewell<br>g00228389@smail.raritanval.edu<br>Creative Commons</address></footer>
+	</footer>
+	</div>
+  </body>
+</html>

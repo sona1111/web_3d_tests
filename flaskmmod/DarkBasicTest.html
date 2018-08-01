@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">  
+<title>DarkBasicTest</title>
+<style>
+
+html {overflow-x:hidden;}
+
+body {background-color:rgb(50,50,50);
+    -webkit-transform-style: preserve-3d;
+    
+    
+
+}
+
+#wrap {width:90%;-webkit-transform-style: preserve-3d;}
+
+
+aside {-webkit-perspective:5000px;
+       float:right;
+       margin-right:65px;
+       position:relative;
+       -webkit-transform-style: preserve-3d;
+       z-index:0;
+       
+}
+
+aside section div {width:20px;
+           height:20px;
+           background-color:blue;
+           position:absolute;
+           margin: 0 auto;
+           -webkit-transform-style: preserve-3d;
+           
+}
+
+aside section{
+              margin:20px 4px;
+              position:absolute;
+              margin-left:49%;
+              -webkit-transform: translateZ(0px) rotateY(0deg);
+              -webkit-transform-style: preserve-3d;
+              -webkit-transition: -webkit-transform 1s;
+              
+}
+
+header {border:red solid 4px;
+        width:100%;
+        font-size:1em;
+        color:white;
+        
+}
+
+header h2 {text-align:center}
+
+article {-webkit-perspective:100000px;
+         width:90%;
+         position:relative;
+         right:20px;
+         margin-top:8.5%;
+         margin-bottom:10%;
+         
+         -webkit-transform-style: preserve-3d;
+         
+}
+
+article section{
+              
+              position:absolute;
+              left:100%;
+              width:inherit;
+              -webkit-transform: translateZ(0px) rotateY(0deg);
+              -webkit-transform-style: preserve-3d;
+              -webkit-transition: -webkit-transform 1s;
+}
+
+article section div {width:inherit;
+           
+           background-color:rgba(150,40,40,0.9);
+           position:absolute;
+           -webkit-transform-style: preserve-3d;
+           border:yellow solid 2px;
+           font-size:45px;
+           padding:10px;
+           -webkit-backface-visibility:visible;
+           -webkit-transition: -webkit-transform 1s;
+           
+          
+           
+}
+
+#newpost{background-color:rgba(40,150,40,0.9);
+         -webkit-transform: rotateY(-180deg) translateX(-100%);
+         -webkit-transform-style: preserve-3d;
+         -webkit-backface-visibility:visible;
+}
+
+#newpost input{font-size:25px;}
+#newpost textarea{width:80%;
+                  height:300px;
+                  font-size:25px;
+}
+
+footer{clear:both;
+       border:red solid 10px;
+}
+
+nav ul{list-style-type:none;       
+}
+
+nav ul li{display:inline;
+       padding:4px;
+       border:purple outset 2px;
+}
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    //make the rotating panels
+    currentdeg = 0;
+    
+    //width = $('article section div').width();
+    var width = 1100;
+    var jposts = ['gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe gsagfe ','sdfjasdg sdfjasdg sdfjasdg sdfjasdg sdfjasdg sdfjasdg sdfjasdg sdfjasdg sdfjasdg sdfjasdg sdfjasdg sdfjasdg sdfjasdg ','g','g','g','g','g','g'];
+    var numPanels = jposts.length;
+    var degInc = 360/numPanels;
+    var pages = [];
+    
+    for (n=0;n<numPanels;n++){
+    
+    
+    $('article section').append('<div class="blogpost active">'+jposts[n]+'</div>')
+    pages.push($('article section div:last-child')[0])
+    $('article section div:last-child').css('-webkit-transform','rotateY('+(-1*conv2pie(n*degInc))+'deg) translateX(-100%)');
+                                   //    .css('top',(-5000*n)+'px');
+    };
+    
+    
+    
+    //Find the largest post to apply the correct height
+    var t=0; 
+    $('article section div').each(function () {
+        $this = $(this);
+        if ( $this.outerHeight() > t ) {
+            t=$this.outerHeight();
+        }
+    });
+    $('article').height(t);
+
+    
+    //I did not think this up but its pretty cool...
+    function conv2pie(input){
+    input = input*3/4
+    a=Math.floor(input/270);
+    b=(((input%270)+270)%270);
+    out=a*360+b;
+    return out
+    };
+    
+    
+    
+    function turnPage(index){
+        var numPanels = $('.active').length
+        var degInc = 360/numPanels;
+        for (n=0;n<(numPanels);n++){
+            $('.active:eq('+(n)+')').css('-webkit-transform','rotateY('+(-1*conv2pie((n+index)*degInc))+'deg) translateX(-100%)');
+            
+        };
+    };
+    
+
+
+var h = t+25;
+    
+    
+        
+    //make all of the little dot thingies
+    currentdeg = 0;
+    yshift = 192;
+    for(n=0;n<(h/25);n++){
+        $('aside section').append('<div></div>');
+        $('aside section div:last-child').css('-webkit-transform','rotateY('+currentdeg+'deg) translateY('+yshift+'px) translateZ(50px)');
+        currentdeg += 15
+        yshift += 25
+    };
+    
+        
+    $(document).scroll(function(){
+    var s = $(document).scrollTop();
+    
+    currentdeg2 = 0;
+    yshift2 = 192;
+    for(n=0;n<(h/25);n++){
+        $('aside section div:nth-child('+(n+1)+')').css('-webkit-transform','rotateY('+(currentdeg2+(s*1.5))+'deg) translateY('+yshift2+'px) translateZ(50px)');
+        currentdeg2 += 15
+        yshift2 += 25
+    };
+    });
+
+    //must find out how to get curent angle and comtinue increasing past 360...
+    r = 0;
+    d = 1;
+    somedeg = 0;
+    $('nav ul li').click(function(){
+        somedeg = (($(this).index())*90);
+        
+        if ($(this).index() == 0){
+            removeSpecial()
+            r += 1;
+            d -= 500;
+            turnPage(1*r);
+            $('aside section').css('-webkit-transform','translateZ(0px) rotateY('+d+'deg)');
+            
+        }else if ($(this).index() == 1){
+            removeSpecial()
+            r -= 1;
+            d += 500;
+            turnPage(1*r);
+            $('aside section').css('-webkit-transform','translateZ(0px) rotateY('+d+'deg)');
+            
+         
+        }else if ($(this).index() == 2){
+            d += 1000;
+            $('#newpost').addClass('active');
+            i = $('#newpost').index()
+            turnPage(i);            
+            $('aside section').css('-webkit-transform','translateZ(0px) rotateY('+d+'deg)');
+        
+        }
+        
+    });
+    
+    function removeSpecial(){
+        $("article section div").not(".blogpost").removeClass('active').css('-webkit-transform','rotateY(-180deg) translateX(-100%)');
+    };
+    
+    
+
+});
+
+
+
+
+</script>
+</head>
+<body style="">
+
+<aside id="cont_side">
+    <section class="ring"></section>
+</aside>
+
+<div id="wrap">
+<header><h2>Paul's Blog</h2>
+<nav>
+<ul>
+<li id="next">Next</li>
+<li id="back">Back</li>
+<li>Reserved</li>
+<li>Reserved</li>
+
+</ul>
+</nav>
+</header>
+
+
+</div>
+<div>CONTENT
+</div>
+
+<article><section>
+    <div id="newpost">
+    <h2>Create a new post:</h2>
+        <form>
+        <textarea></textarea><br>
+        <input type="submit">
+        </form>
+    </div>
+</section></article>
+
+
+<footer style="clear:both;border:red solid 10px;">STUFF</footer>
+
+
+</body></html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+<meta charset="utf-8" />  
+<title>Calculator</title> 
+
+<style>
+span, div div {width:30px;
+    height:30px;
+    margin:8px;
+    border:#84CF96 outset 4px;
+    display:inline-block;
+    font-size:25px;
+    text-align:center;
+    -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+aside {padding: 0 5px;margin:8px;border:MediumSeaGreen outset 4px; display:inline-block;font-size:25px;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;}
+section {padding: 0 5px;margin:8px;border:MediumSeaGreen outset 4px; display:inline-block;font-size:25px;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;}
+
+
+span:active, aside:active, section:active{border:#FBEC5D inset 4px;background-color:#FF6A6A}
+
+p { width:300px;
+    border: red dashed 5px;
+    height:25px;
+    margin:5px;
+    margin-left:15px;
+    font-size:20px;
+    background-color:#C6E7CE;
+}
+
+div{margin-left:20px;}
+div div{visibility:hidden;}
+
+article{margin:50px;
+        background-color:#CEFFCE;
+        border:#AE70ED outset 10px;
+        width:345px;
+}
+
+span.op{border:#009A31 outset 4px;}
+
+</style>
+
+
+
+
+</head> 
+
+
+ 
+<body>
+
+<article>
+<p id='display'>
+</p>
+<div>
+<span>1</span><span>2</span><span>3</span><span>4</span><br>
+<span>5</span><span>6</span><span>7</span><span>8</span><br>
+<span>9</span><span>0</span><br>
+<span class=op>+</span><span class=op>-</span><div>&nbsp;</div><aside>Enter</aside><br>
+<span class=op>&#215;</span><span class=op>/</span><div>&nbsp;</div><section>C/CE</section><br></div>
+</article>
+
+<script>
+
+
+var led = '';
+var numbtns = document.body.getElementsByTagName('span');
+var enterkey = document.body.getElementsByTagName('aside')[0];
+var clearkey = document.body.getElementsByTagName('section')[0];
+var display = document.getElementById('display');
+
+for (btn=0;(btn<numbtns.length);btn++){
+    numbtns[btn].onclick = function(){
+        led += this.innerHTML;
+        display.innerHTML = led;
+    };
+};
+
+enterkey.onclick = function(){
+    try{
+        output = compute(display.innerHTML);
+        display.innerHTML = output;
+        led = output
+    }
+    catch(err){
+        display.innerHTML = 'Error';
+        led = ''
+    }
+};
+
+clearkey.onclick = function(){
+    display.innerHTML = '';
+    led = '';
+};
+
+function compute(inpstr){
+    return eval(inpstr.replace('×','*'));
+};
+
+
+
+
+
+
+</script> 
+</body>
+</html>

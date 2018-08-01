@@ -1,0 +1,228 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+<meta charset="utf-8" />  
+<title>Blank HTML 5 Template</title>  
+
+<style>
+
+.m{float:left;
+   margin-right:-2px;
+}
+
+.btn{width:100px;
+    height:25px;
+    border:black solid 2px;
+    border-top:none;
+    font-size:18px;
+    text-align:center;
+    background-color:#BD5CFE;
+}
+
+div .btn:hover{background-color:#FF4848;
+}
+
+.m > .btn{border-top:black solid 2px;
+}
+
+.tm > .btn:first-child{border-top:black solid 2px;
+}
+
+
+.sm{display:none;
+}
+
+.sm .btn{background-color:#99C7FF;
+}
+
+.tm .btn{background-color:#FFFF84;
+}
+
+.tm{display:none;
+    left:100px;
+    top:-23px;
+    position:relative;
+}
+
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+
+    $('.m').hover(function(){
+        $(this).find('.sm').toggle();
+        });
+    $('.sm .btn').hover(function(){
+        $(this).find('.tm').toggle();
+        }); 
+    
+
+
+});
+
+</script>
+
+
+
+</head>  
+<body>
+
+<div class=m>
+    <div class=btn>Toplevel</div>
+    <div class=sm>
+        <div class=btn>Toplevel
+            <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=m>
+    <div class=btn>Toplevel</div>
+    <div class=sm>
+        <div class=btn>Toplevel
+            <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=m>
+    <div class=btn>Toplevel</div>
+    <div class=sm>
+        <div class=btn>Toplevel
+            <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=m>
+    <div class=btn>Toplevel</div>
+    <div class=sm>
+        <div class=btn>Toplevel
+            <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=m>
+    <div class=btn>Toplevel</div>
+    <div class=sm>
+        <div class=btn>Toplevel
+            <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+        <div class=btn>Toplevel
+        <div class=tm>
+                <div class=btn>test1</div>
+                <div class=btn>test1</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

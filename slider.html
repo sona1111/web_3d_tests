@@ -1,0 +1,80 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+<meta charset="utf-8" />  
+<title>slider</title>  
+<style>
+body{padding:100px;}
+
+
+
+div {width:300px;
+     
+     
+     border:purple solid 2px;
+}
+
+
+
+#logon{
+       
+       border:red solid 2px;
+       width:296px;
+       height:30px;
+}
+
+#logonform{
+       margin-top:2px;
+       width:296px;
+       border:red solid 2px;
+       display:none;
+       clear:both;
+}
+
+#logonform input {
+        width: 98%;
+        clear: both;
+    }
+input[type=checkbox]{float:left;}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+var imgFlag = false;
+
+    $('#logon').click(function(){
+
+        $('#logonform').slideToggle(500);
+        if (imgFlag == false){
+            $('#logon img').attr('src','remove.png');
+            imgFlag = true;
+        }
+        else{
+            $('#logon img').attr('src','add.png');
+            imgFlag = false;
+        }
+
+    });
+
+});
+</script>
+</head>  
+<body>
+<div>
+    <div id=logon>
+        <img src="add.png" height=20 width=20 >
+        Click Here to log in!
+    </div>
+    <div id=logonform>
+        <form>
+            <label for=username>User Name</label><input type=text name=username>
+            <label for=password>Password</label><input type=password name=password>
+            <label for=remember>Remember Login?</label><input type=checkbox name=remember>
+        
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

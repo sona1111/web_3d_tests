@@ -1,0 +1,67 @@
+body {margin-top:300px;}
+
+.dtest1_1 {-webkit-transform:rotateY(-90deg);}
+.dtest1_2 {-webkit-transform:rotateY(-180deg);}
+.dtest1_3 {-webkit-transform:rotateY(-270deg);}
+.dtest1_4 {-webkit-transform:rotateY(-360deg);}
+
+#container{-webkit-perspective: 1000px;
+width: 800px;
+height: 30px;
+margin: 0 auto;
+transition: height 1s;
+
+}
+
+.cube a {margin-left:20px;
+         font-size:1.8em;
+
+}
+
+.cube img {vertical-align:middle;
+           margin-top:-6px;
+           margin-left:-20px;
+    }
+
+.cube {
+  height:inherit;
+  position: relative;  
+  width:inherit;
+  transition: -webkit-transform 1s;
+-webkit-transform-style: preserve-3d; 
+
+}
+
+.face {
+  background-color: rgba(50, 50, 50,0.6);
+  padding:5px;
+  height: inherit;
+  
+  position: absolute;
+  width: inherit;
+  -webkit-backface-visibility: hidden;
+  
+
+}
+
+
+
+.cube .two {
+  background-color: rgba(235, 41, 158,0.5);
+  -webkit-transform: translateZ(400px);
+}
+
+.cube .three {
+  background-color: rgba(252, 209, 22,0.5);
+  -webkit-transform: rotateY(90deg) translateZ(400px);
+}
+
+.cube .four {
+  background-color: rgba(44, 45, 213,0.5);
+  -webkit-transform: rotateY(180deg) translateZ(400px);
+}
+
+.cube .five {
+  background-color: rgba(125, 105, 181,0.5);
+  -webkit-transform: rotateY(-90deg) translateZ(400px);
+}

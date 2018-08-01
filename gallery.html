@@ -1,0 +1,160 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+<meta charset="utf-8" />  
+<title>Image Gallery</title> 
+<style>
+
+body{background-color:#D2F1FA}
+
+article{width:1000px;
+        height:600px;
+        margin:50px;
+        border:#3DC9F4 groove 20px;
+        padding:15px;
+        position:relative;
+        background-color:#ACE8FA;
+}
+
+aside{width:220px;
+      border:yellow solid 1px;
+      padding:2px;
+      height:590px;
+      overflow:auto;
+}
+
+section{width:750px;
+      float:right;
+      
+      height:590px;
+      overflow:show;
+      -webkit-transition: -webkit-transform 1s;
+      -moz-transition: -moz-transform 1s;
+      transition: transform 1s;
+}
+
+section img{-webkit-border-radius:15px;
+-moz-border-radius:15px;
+border-radius:15px;
+            width:750px;
+            height:590px;
+            -webkit-box-shadow:10px 10px 5px #888;
+            -moz-box-shadow:10px 10px 5px #888;
+            box-shadow:10px 10px 5px #888;
+
+}
+
+nav{text-align:center;
+    font-size:30px;
+    position:absolute;
+    border:purple outset 5px;
+    background-color:#AA66BB;
+    z-index:100;
+}
+
+nav:active{border:purple inset 5px;
+}
+
+#back{top:618px;
+      left:300px;
+}
+
+#forward{top:618px;
+         left:790px;
+}
+</style> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+<script>
+
+$(document).ready(function(){
+
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        $('<img>')[0].src = this;
+        
+    });
+}
+
+
+
+var thumbs = ['landscap.png','leaf.png','prplflwr.png','pyramid.png','skyline.png','tower.png','road.png']
+var fulls = ['landscap2.jpg','leaf2.jpg','prplflwr2.jpg','pyramid2.jpg','skyline2.jpg','tower2.jpg','road2.jpg']
+var current = 0;
+
+preload(thumbs);
+preload(fulls);
+
+for(i=0;i<thumbs.length;i++){
+    $('aside').append('<img src="'+thumbs[i]+'">');
+};
+
+$('aside img').click(function(){
+
+    current = $(this).index()
+    $('section').html('');
+    $('section').append('<img src="'+fulls[current]+'">');
+
+});
+
+$('#back').click(function(){
+    current = next(current-1);
+    $('section').css('-webkit-transform','rotateY('+(180*current)+'deg)');
+    $('section').css('-moz-transform','rotateY('+(180*current)+'deg)');
+    $('section').css('transform','rotateY('+(180*current)+'deg)');
+    setTimeout(function(){$('section').find('img').attr('src',fulls[current]);},300);
+    //$('section').html('');
+    //$('section').css('-webkit-transform','rotateY('+180*current+'deg)');
+    //$('section').append('<img src="'+fulls[current]+'">');
+});
+
+$('#forward').click(function(){
+    current = next(current+1);
+    $('section').css('-webkit-transform','rotateY('+(180*current)+'deg)');
+    $('section').css('-moz-transform','rotateY('+(180*current)+'deg)');
+    $('section').css('transform','rotateY('+(180*current)+'deg)');
+    setTimeout(function(){$('section').find('img').attr('src',fulls[current]);},300);
+});
+
+
+function next(thing){
+if (thing>6){
+    return 0}
+else if (thing<0){
+    return 6}
+else{
+    return thing
+}};
+
+});
+
+
+</script>
+</head>
+
+
+<body>
+
+
+
+<article>
+
+<section>
+<img src='landscap2.jpg'>
+</section>
+<aside>
+</aside>
+
+    <nav id=back>
+        BACK
+    </nav>
+
+    <nav id=forward>
+        FORWARD
+    </nav>
+
+</article>
+
+
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+Layout 1.0
+directory "D:\Samples"
+dimensions 1600 2000 200.000
+bgcolor 255 255 255
+bgscale 1.000
+units 1
+snapgrid 0.063
+begin_object
+  objlocation 0.250 5.750 3.250 9.750
+  objcrop 465 0 1362 1195
+  objbgtype 0
+  objcolor 128 128 128
+  objimage "D:\Samples\Elephant far.jpg"
+  objorientation 0
+  objamount 1024
+  objtext 0 0
+  objalignment 4
+  objproportions 0
+  objfont "Arial" 36.00 1.00 0 0 0 0 0
+  objborder 0.000 0 0 0
+end_object
+begin_object
+  objlocation 1.250 0.250 7.750 5.500
+  objcrop 90 0 1569 1195
+  objbgtype 0
+  objcolor 128 128 128
+  objimage "D:\Samples\Elephant close.jpg"
+  objorientation 0
+  objamount 1024
+  objtext 0 0
+  objalignment 4
+  objproportions 0
+  objfont "Arial" 36.00 1.00 0 0 0 0 0
+  objborder 0.000 0 0 0
+end_object
+begin_object
+  objlocation 3.500 5.750 7.750 8.500
+  objcrop 0 23 1833 1210
+  objbgtype 0
+  objcolor 128 128 128
+  objimage "D:\Samples\grassland1.jpg"
+  objorientation 0
+  objamount 1024
+  objtext 0 0
+  objalignment 4
+  objproportions 0
+  objfont "Arial" 36.00 1.00 0 0 0 0 0
+  objborder 0.000 0 0 0
+end_object
+begin_object
+  objlocation 2.772 7.812 8.147 9.687
+  objcrop 0 0 0 0
+  objbgtype 1
+  objcolor 128 128 128
+  objorientation 0
+  objamount 1024
+  objtext 1 16
+    "Elephant Country" 0
+  objalignment 0
+  objproportions 1
+  objfont "Arial" 45.00 0.75 1 1 154 97 17
+  objborder 0.000 0 0 0
+end_object
+end
+Layout 1.0
+directory "D:\Samples"
+dimensions 1600 2000 200.000
+bgcolor 255 255 255
+bgscale 1.000
+units 1
+snapgrid 0.063
+begin_object
+  objlocation 0.250 5.750 3.250 9.750
+  objcrop 465 0 1362 1195
+  objbgtype 0
+  objcolor 128 128 128
+  objorientation 0
+  objamount 1024
+  objtext 0 0
+  objalignment 4
+  objproportions 0
+  objfont "Arial" 36.00 1.00 0 0 0 0 0
+  objborder 0.000 0 0 0
+end_object
+begin_object
+  objlocation 1.250 0.250 7.750 5.500
+  objcrop 90 0 1569 1195
+  objbgtype 0
+  objcolor 128 128 128
+  objorientation 0
+  objamount 1024
+  objtext 0 0
+  objalignment 4
+  objproportions 0
+  objfont "Arial" 36.00 1.00 0 0 0 0 0
+  objborder 0.000 0 0 0
+end_object
+begin_object
+  objlocation 3.500 5.750 7.750 8.500
+  objcrop 0 23 1833 1210
+  objbgtype 0
+  objcolor 128 128 128
+  objorientation 0
+  objamount 1024
+  objtext 0 0
+  objalignment 4
+  objproportions 0
+  objfont "Arial" 36.00 1.00 0 0 0 0 0
+  objborder 0.000 0 0 0
+end_object
+begin_object
+  objlocation 2.772 7.812 8.147 9.687
+  objcrop 0 0 0 0
+  objbgtype 1
+  objcolor 128 128 128
+  objorientation 0
+  objamount 1024
+  objtext 1 16
+    "Elephant Country" 0
+  objalignment 0
+  objproportions 1
+  objfont "Arial" 45.00 0.75 1 1 154 97 17
+  objborder 0.000 0 0 0
+end_object
+end

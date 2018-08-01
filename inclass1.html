@@ -1,0 +1,56 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+<meta charset="utf-8" />  
+<title>In Class Assignment</title>
+<style>
+body {margin: 200px;}
+
+img {position:relative}
+figure {
+width:200px;
+            height:150px;
+            border:blue solid 2px;
+    }
+
+figcaption {font-size:25px;
+            display:none;
+            position:absolute;
+            top:315px;
+            
+            
+}
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+
+    $('figure').mouseenter(function(){
+        
+        console.log(5);
+        $(this).parent().find('figcaption').fadeIn(500);
+        
+    });
+    
+    $('figure').mouseleave(function(){
+        
+        console.log(10);
+        $(this).parent().find('figcaption').fadeOut(500);
+        
+    });
+
+});
+
+</script>
+</head>  
+<body>
+<figure>
+<img id='hmmm' src=leaf.png>
+<figcaption>Here is some caption</figcaption>
+</figure>
+</body>
+</html>
+
+

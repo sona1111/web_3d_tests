@@ -1,0 +1,256 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+<meta charset="utf-8" />  
+<title>DarkBasicTest</title>
+<style>
+
+
+
+body {background-color:rgb(50,50,50);
+    -webkit-transform-style: preserve-3d;
+    
+    
+
+}
+
+#wrap {width:90%;-webkit-transform-style: preserve-3d;}
+
+
+aside {-webkit-perspective:5000px;
+       float:right;
+       margin-right:65px;
+       position:relative;
+       -webkit-transform-style: preserve-3d;
+}
+
+aside section div {width:20px;
+           height:20px;
+           background-color:blue;
+           position:absolute;
+           margin: 0 auto;
+           -webkit-transform-style: preserve-3d;
+           
+}
+
+aside section{
+              margin:20px 4px;
+              position:absolute;
+              margin-left:49%;
+              -webkit-transform: translateZ(0px) rotateY(0deg);
+              -webkit-transform-style: preserve-3d;
+              -webkit-transition: -webkit-transform 1s;
+              
+}
+
+header {border:red solid 4px;
+        width:100%;
+        font-size:1em;
+        color:white;
+        
+}
+
+article {-webkit-perspective:100000px;
+         position:relative;
+         margin-left:700px;
+         margin-top:100px;
+         margin-bottom:70px;
+         height:1000px;
+         -webkit-transform-style: preserve-3d;
+         
+}
+
+article section{
+              
+              position:absolute;
+              
+              -webkit-transform: translateZ(0px) rotateY(0deg);
+              -webkit-transform-style: preserve-3d;
+              -webkit-transition: -webkit-transform 1s;
+}
+
+article section div {width:1100px;
+           height:1000px;
+           background-color:rgba(150,40,40,0.3);
+           position:absolute;
+           -webkit-transform-style: preserve-3d;
+           border:yellow solid 2px;
+           font-size:300px;
+           --webkit-backface-visibility:visible;
+           -webkit-transition: -webkit-transform 1s;
+           
+          
+           
+}
+
+footer{clear:both;
+       border:red solid 10px;
+}
+
+nav ul{list-style-type:none;       
+}
+
+nav ul li{display:inline;
+       padding:4px;
+       border:purple outset 2px;
+}
+
+
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    var h = $(document).height()
+    
+    
+        
+    //make all of the little dot thingies
+    currentdeg = 0;
+    yshift = 0;
+    for(n=0;n<(h/25);n++){
+        $('aside section').append('<div></div>');
+        $('aside section div:last-child').css('-webkit-transform','rotateY('+currentdeg+'deg) translateY('+yshift+'px) translateZ(50px)');
+        currentdeg += 15
+        yshift += 25
+    };
+    
+        
+    $(document).scroll(function(){
+    var s = $(document).scrollTop();
+    
+    currentdeg2 = 0;
+    yshift2 = 0;
+    for(n=0;n<(h/25);n++){
+        $('aside section div:nth-child('+(n+1)+')').css('-webkit-transform','rotateY('+(currentdeg2+(s*1.5))+'deg) translateY('+yshift2+'px) translateZ(50px)');
+        currentdeg2 += 15
+        yshift2 += 25
+    };
+    });
+    
+    //make the rotating panels
+    currentdeg = 0;
+    
+    //width = $('article section div').width();
+    var width = 1100;
+    var numPanels = 20
+    var degInc = 360/numPanels
+    var pages = [];
+    
+    for (n=0;n<numPanels;n++){
+    
+    
+    $('article section').append('<div>'+n+'</div>')
+    pages.push($('article section div:last-child')[0])
+    $('article section div:last-child').css('-webkit-transform','rotateY('+(-1*conv2pie(n*degInc))+'deg) translateX(-650px)');
+                                   //    .css('top',(-5000*n)+'px');
+    };
+
+    
+    //I did not think this up but its pretty cool...
+    function conv2pie(input){
+    input = input*3/4
+    a=Math.floor(input/270);
+    b=(((input%270)+270)%270);
+    out=a*360+b;
+    return out
+    };
+    
+    
+    
+    function turnPage(index){
+    
+    for (n=0;n<(pages.length);n++){
+        $('article section div:nth-child('+(n+1)+')').css('-webkit-transform','rotateY('+(-1*conv2pie((n+index)*degInc))+'deg) translateX(-650px)');
+        
+    };
+    };
+    
+//    $('article section div:nth-child(1)').css('-webkit-transform','rotateY(0deg) translateX('+(-width+(-width/10))+'px)');
+//    $('article section div:nth-child(2)').css('-webkit-transform','rotateY(90deg) translateX('+(-width+(-width/10))+'px)')
+//                                         .css('top','-5000px');
+//    $('article section div:nth-child(3)').css('-webkit-transform','rotateY(180deg) translateX('+(-width+(-width/10))+'px)').css('top','-10000px');
+//    $('article section div:nth-child(4)').css('-webkit-transform','rotateY(270deg) translateX('+(-width+(-width/10))+'px)').css('top','-15000px');
+
+
+//    $('article section div:nth-child(2)').css('-webkit-transform','rotateY(90deg) translateZ('+(-width/2)+'px) translateX('+(-(width/2)-(width/10))+'px)');
+//    $('article section div:nth-child(3)').css('-webkit-transform','rotateY(180deg) translateX('+(-width/10)+'px)');
+//    $('article section div:nth-child(4)').css('-webkit-transform','rotateY(270deg) translateZ('+(width/2)+'px) translateX('+(-(width/2)-(width/10))+'px)');
+    
+    
+
+/*
+    $('nav ul li').click(function(){
+    console.log($(this).index());
+    switch ($(this).index()){
+        case 0:
+            $('article section').css('-webkit-transform','rotateY(0deg) translateZ(0px)');
+            $('aside section').css('-webkit-transform','translateZ(-200px) rotateY(0deg)');
+            break;
+        case 1:
+            $('article section').css('-webkit-transform','rotateY(90deg) translateZ(0px)');
+            $('aside section').css('-webkit-transform','translateZ(-200px) rotateY(90deg)');
+            break;
+        case 2:
+            $('article section').css('-webkit-transform','rotateY(180deg) translateZ(0px)');
+            $('aside section').css('-webkit-transform','translateZ(-200px) rotateY(180deg)');
+            break;
+        case 3:
+            $('article section').css('-webkit-transform','rotateY(270deg) translateZ(0px)');
+            $('aside section').css('-webkit-transform','translateZ(-200px) rotateY(270deg)');
+            break;
+        };
+    
+    });
+*/
+
+//must find out how to get curent angle and comtinue increasing past 360...
+r = 1;
+d = 1;
+  somedeg = 0;
+    $('nav ul li').click(function(){
+        somedeg = (($(this).index())*90);
+        
+        turnPage(-1*r);
+        $('aside section').css('-webkit-transform','translateZ(0px) rotateY('+d+'deg)');
+        r += 1;
+        d -= 500;
+    });
+
+});
+
+
+</script>
+</head>
+<body>
+
+<aside id="cont_side">
+    <section class="ring"></section>
+</aside>
+
+<div id="wrap">
+<header><h2>TITLE OF PAGE</h2>
+<nav>
+<ul>
+<li>Page 1</li>
+<li>Page 2</li>
+<li>Page 3</li>
+<li>Page 4</li>
+
+</ul>
+</nav>
+</header>
+<article><section>
+
+</section></article>
+
+</div>
+
+
+
+
+<footer style="clear:both;border:red solid 10px;">STUFF</footer>
+
+</body>
+</html>

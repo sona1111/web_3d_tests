@@ -1,0 +1,76 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+$('*').css('border','purple ridge 7px');
+
+
+$("header").hover(function(){
+	$("footer img").css("visibility","visible");
+},function(){
+	$("footer img").css("visibility","hidden");
+}
+
+);
+
+oridge = new Date();
+seconds = 0;
+temp = 0;
+
+setInterval(function(){
+
+d = new Date();
+d = d.getTime();
+difference = Math.abs(oridge - d);
+seconds = Math.round(difference/1000);
+$('aside').html(d+"<br>"+difference+"<br>"+seconds);
+switch (seconds){
+
+case 1:	$('#para').text('One second has passed!'); break;
+case 5: $('#para').text('Five seconds have passed!'); break;
+}
+
+}
+
+,150)
+
+});
+
+</script>
+<title>Blank HTML 5 Template</title>  
+<style>
+header { border: red solid 5px;}
+
+header img {width:100px;}
+
+aside {border: blue solid 5px; height:300px; width:700px; font-size:40px;}
+
+footer {border: green solid 5px;}
+
+footer img {width:300px;visibility:hidden;}
+
+</style>
+</head>  
+<body>
+<header>
+<img src="t.jpg">
+</header>
+
+<aside>
+
+</aside>
+
+<p id=para style="float:right;font-size:20px;margin:10px;"></p>
+
+<footer>
+<img src="t.jpg">
+</footer>
+
+
+</body>
+</html>
